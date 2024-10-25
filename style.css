@@ -1,1 +1,83 @@
+/*importa uma fonte Montserrat aula passada, voces já devem saber isso, né:) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+span {
+   content: '\263C';
+}
 
+/* Estilo do switch */
+.switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.switch .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: background-color 0.4s;
+}
+
+.slider:before {
+  content: "\263C";
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+/* Input invisível */
+.troca-tema {
+  display: none;
+}
+
+/* Efeitos ao marcar o switch */
+.troca-tema:checked + .switch .slider {
+  background-color: #2196F3;
+}
+
+.troca-tema:checked + .switch .slider:before {
+  transform: translateX(26px);
+}
+
+/* Tema Claro (Padrão) */
+body {
+  
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 3s linear;
+}
+
+/* Tema Escuro Ativado */
+.troca-tema:checked ~ main {
+  content: "\263C";
+  font-family: "Montserrat", sans-serif;
+  background-color: #292c35;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 3s linear;
+}
